@@ -1,5 +1,6 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
 
 const Modal = ({ isVisible, children, style = {} }) => {
@@ -7,18 +8,25 @@ const Modal = ({ isVisible, children, style = {} }) => {
 
   return (
     <div
-      className="fixed top-0 bottom-0 left-0 right-0 p1"
-      style={ objectAssign({}, styles.base, visibleStyle, style) }>
+      style={ objectAssign({}, ...styles.base, visibleStyle, style) }>
       { children }
     </div>
   );
 };
 
 const styles = {
-  base: {
-    backgroundColor: 'rgba(0, 0, 0, 0.25)',
-    transition: 'visibility 250ms, opacity 250ms',
-  },
+  base: [
+    Bass.fixed,
+    Bass.top0,
+    Bass.bottom0,
+    Bass.left0,
+    Bass.right0,
+    Bass.p1,
+    {
+      backgroundColor: 'rgba(0, 0, 0, 0.25)',
+      transition: 'visibility 250ms, opacity 250ms',
+    }
+  ],
   visible: {
     visibility: 'visible',
     opacity: 1,

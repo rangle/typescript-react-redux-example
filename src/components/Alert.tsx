@@ -1,31 +1,32 @@
 import * as React from 'react';
+import * as Radium from 'radium';
+const Bass = require('basscss-radium');
 const objectAssign = require('object-assign');
 
 
-const componentColor = {
-  info: 'bg-blue white',
-  warning: 'bg-yellow black',
-  success: 'bg-green black',
-  error: 'bg-red white',
-};
+const Alert = ({ 
+    children,
+    isVisible,
+    status = 'info',
+    style = {}
+  }) => {
 
-const Alert = ({ children, isVisible, status = 'info', className = '',
-                 style = {} }) => {
-  const visibleClass = isVisible ? 'block' : 'hide';
+  const visibleStyle = isVisible ? Bass.block : Bass.hide;
 
   return (
     <div
-      className={ `${ className } p2 bold ${ visibleClass }
-                   ${ componentColor[status] || 'info' }` }
-      style={ objectAssign({}, styles.base, style) }>
+      style={ objectAssign({}, ...styles.base, ...styles[status], visibleStyle, style) }>
       { children }
     </div>
   );
 };
 
 const styles = {
-  base: {},
+  base: [Bass.p2, Bass.bold],
+  info: [Bass.bgBlue, Bass.white],
+  warning: [Bass.bgYellow, Bass.black],
+  success: [Bass.bgGreen, Bass.black],
+  error: [Bass.bgRed, Bass.white]
 };
-
 
 export default Alert;

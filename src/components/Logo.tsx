@@ -6,16 +6,16 @@ const LogoImage = require('../assets/rangleio-logo.svg');
 const Logo = ({ style = {} }) => {
   return (
     <img
-      style={ objectAssign({}, styles.base, style) }
+      style={ objectAssign({}, ...styles.base, style) }
       src={ LogoImage }
       alt="Rangle.io" />
   );
 };
 
 const styles = {
-  base: {
+  base: [{
     width: 128,
-  },
+  }],
 };
 
 

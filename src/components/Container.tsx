@@ -1,12 +1,11 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
-
-const Container = ({ children, style = {}, className = '' }) => {
+const Container = ({ children, style = {} }) => {
   return (
-    <div className={ `container ${ className }` }
-         style={ objectAssign({}, styles.base, style) }>
-      <div className="clearfix">
+    <div style={ objectAssign({}, ...styles.base, style) }>
+      <div style={Bass.clearFix}>
         { children }
       </div>
     </div>
@@ -14,7 +13,7 @@ const Container = ({ children, style = {}, className = '' }) => {
 };
 
 const styles = {
-  base: {},
+  base: [Bass.container],
 };
 
 

@@ -4,14 +4,14 @@ const objectAssign = require('object-assign');
 
 const FormLabel = ({ children, style = {} }) => {
   return (
-    <label style={ objectAssign({}, styles.base, style) }>
+    <label style={ objectAssign({}, ...styles.base, style) }>
       { children }
     </label>
   );
 };
 
 const styles = {
-  base: {},
+  base: [],
 };
 
 

@@ -1,20 +1,19 @@
 import * as React from 'react';
+const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
-
-const NavigatorItem = ({ children, isVisible = true, className = '' }) => {
-  const visibleClass = isVisible ? 'block' : 'hide';
+const NavigatorItem = ({ children, isVisible = true }) => {
+  const visibleStyle = isVisible ? Bass.block : Bass.hide;
 
   return (
-    <div
-      className={ `${ visibleClass } ${ className }` }
-      style={ styles.base }>
+    <div style={ objectAssign({}, ...styles.base, visibleStyle) }>
       { children }
     </div>
   );
 };
 
 const styles = {
-  base: {},
+  base: [ Bass.p1 ],
 };
 
 

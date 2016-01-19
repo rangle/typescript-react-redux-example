@@ -1,18 +1,17 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
-
-const Column = ({ children, className = '', style = {} }) => {
+const Column = ({ children, style = {} }) => {
   return (
-    <div className={ `col ${ className }` }
-         style={ objectAssign({}, styles.base, style) }>
+    <div style={ objectAssign({}, ...styles.base, style) }>
       { children }
     </div>
   );
 };
 
 const styles = {
-  base: {},
+  base: [Bass.col],
 };
 
 

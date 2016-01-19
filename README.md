@@ -19,7 +19,6 @@ This is an initial version of this setup and will be expanded in the future. Ref
 
 ### Planned work
 
-* Fix/ReOrg BassCSS styles
 * Better support for custom typings (so we don't have to commit typings to the repo)
 * Test examples (spec & unit)
 * Component `displayName`, `propTypes`, `defaultProps` and documentation

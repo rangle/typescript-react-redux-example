@@ -1,27 +1,26 @@
 import * as React from 'react';
 import Button from './Button';
-
+const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
 const Counter = ({ counter, increment, decrement }) => {
   return (
-    <div className="flex">
-      <div className="flex-auto flex-center center">
+    <div style={ objectAssign({}, ...styles.container) }>
+      <div style={ objectAssign({}, ...styles.buttonContainer) }>
         <Button
-          style={ styles.squareButton }
-          className="btn btn-primary bg-black"
+          style={ objectAssign({}, ...styles.buttonBase, styles.squareButton) }
           onClick={ decrement }>
           -
         </Button>
       </div>
 
-      <div className="flex-auto flex-center center h1">
+      <div style={ objectAssign({}, ...styles.counter) }>
         { counter }
       </div>
 
-      <div className="flex-auto flex-center center">
+      <div style={ objectAssign({}, ...styles.buttonContainer) }>
         <Button
-          style={ styles.squareButton }
-          className="btn btn-primary"
+          style={ objectAssign({}, ...styles.buttonBase, styles.squareButton) }
           onClick={ increment }>
           +
         </Button>
@@ -31,6 +30,10 @@ const Counter = ({ counter, increment, decrement }) => {
 };
 
 const styles = {
+  container: [ Bass.flex, Bass.flexCenter ],
+  buttonContainer: [ Bass.flexAuto, Bass.center ],
+  counter: [ Bass.flexAuto, Bass.center, Bass.h1 ],
+  buttonBase: [ Bass.btn, Bass.btnPrimary, Bass.flex ],
   squareButton: {
     width: 48,
     height: 48,
