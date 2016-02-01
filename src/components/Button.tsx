@@ -1,11 +1,10 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
-
+const Bass = require('basscss-radium');
 
 const Button = (props) => {
   const {
     children,
-    className = '',
     style = {},
     type = 'button',
     onClick,
@@ -14,8 +13,7 @@ const Button = (props) => {
   return (
     <button
       type={ type }
-      className={ `btn btn-primary  ${ className }` }
-      style={ objectAssign({}, styles.base, style) }
+      style={ objectAssign({}, ...styles.base, style) }
       onClick={ onClick }>
       { children }
     </button>
@@ -23,7 +21,7 @@ const Button = (props) => {
 };
 
 const styles = {
-  base: {},
+  base: [Bass.btn, Bass.btnPrimary],
 };
 
 

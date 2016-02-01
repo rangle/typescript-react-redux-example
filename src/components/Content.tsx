@@ -1,19 +1,17 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
-
+const Bass = require('basscss-radium');
 
 const Content = ({ children, style = {}, isVisible }) => {
   return (
-    <div
-      className={ `mt3 p1` }
-      style={ objectAssign({}, styles.base, style) }>
+    <div style={ objectAssign({}, ...styles.base, style) }>
       { isVisible ? children : null }
     </div>
   );
 };
 
 const styles = {
-  base: {},
+  base: [Bass.mt3, Bass.p1],
 };
 
 export default Content;

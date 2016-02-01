@@ -1,21 +1,20 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
-
-const FormError = ({ children, isVisible, style = {}, className = ''}) => {
-  const visibleClass = isVisible ? 'block' : 'hide';
+const FormError = ({ children, isVisible, style = {} }) => {
+  const visibleStyle = isVisible ? Bass.block : Bass.hide;
 
   return (
     <div
-      className={ `${ className } bold ${ visibleClass } black` }
-      style={ objectAssign({}, styles.base, style) }>
+      style={ objectAssign({}, ...styles.base, visibleStyle, style) }>
       { children }
     </div>
   );
 };
 
 const styles = {
-  base: {},
+  base: [ Bass.bold, Bass.black ],
 };
 
 

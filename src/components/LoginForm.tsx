@@ -7,6 +7,8 @@ import FormError from './FormError';
 import Input from './Input';
 import Button from './Button';
 import Alert from './Alert';
+const Bass = require('basscss-radium');
+const objectAssign = require('object-assign');
 
 
 const validate = values => {
@@ -62,7 +64,10 @@ const LoginForm = (props) => {
         <Button type="submit">
           Login
         </Button>
-        <Button onClick={ resetForm } type="button" className="ml2 bg-red">
+        <Button
+          onClick={ resetForm }
+          type="button"
+          style={ objectAssign({}, Bass.ml2, Bass.bgRed) }>
           Clear
         </Button>
       </FormGroup>

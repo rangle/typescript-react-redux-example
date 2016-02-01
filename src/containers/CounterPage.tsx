@@ -4,6 +4,8 @@ import { increment, decrement } from '../actions/counter';
 import Counter from '../components/Counter';
 import Container from '../components/Container';
 import Column from '../components/Column';
+const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
 
 function mapStateToProps(state) {
@@ -22,8 +24,8 @@ function mapDispatchToProps(dispatch) {
 const CounterPage = ({ counter, increaseCounter, decreaseCounter }) => {
   return (
     <Container>
-      <Column className="col-4">
-        <h1 className="center">Counter</h1>
+      <Column style={ Bass.col4 }>
+        <h1 style={ Bass.center }>Counter</h1>
 
         <Counter
           counter={ counter }

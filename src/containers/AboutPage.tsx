@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import Container from '../components/Container';
 import Column from '../components/Column';
-
+const Bass = require('basscss-radium');
 
 function mapStateToProps() {
   return {};
@@ -15,7 +15,7 @@ function mapDispatchToProps() {
 const AboutPage = () => {
   return (
     <Container>
-      <Column className="col-12">
+      <Column style={ Bass.col12 }>
         <h1>About Us</h1>
         <p>
           Rangle.io is a next-generation HTML5 design and development firm

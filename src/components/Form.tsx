@@ -1,11 +1,10 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
 
-
 const Form = ({ children, style = {}, handleSubmit }) => {
   return (
     <form
-      style={ objectAssign({}, styles.base, style) }
+      style={ objectAssign({}, ...styles.base, style) }
       onSubmit={(e) => {
         e.preventDefault();
         const activeElement = document.activeElement as HTMLElement;
@@ -20,7 +19,7 @@ const Form = ({ children, style = {}, handleSubmit }) => {
 };
 
 const styles = {
-  base: {},
+  base: [],
 };
 
 

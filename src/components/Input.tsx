@@ -1,6 +1,6 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
-
+const Bass = require('basscss-radium');
 
 const Input = (props) => {
   const {
@@ -11,9 +11,7 @@ const Input = (props) => {
   } = props;
 
   return (
-    <input
-      className="block col-12 mb1 field"
-      style={ objectAssign({}, styles.base, style) }
+    <input style={ objectAssign({}, ...styles.base, style) }
       type={ type }
       placeholder={ placeholder }
       { ...fieldDefinition } />
@@ -21,7 +19,7 @@ const Input = (props) => {
 };
 
 const styles = {
-  base: {},
+  base: [ Bass.block, Bass.col12, Bass.mb1, Bass.field ],
 };
 
 

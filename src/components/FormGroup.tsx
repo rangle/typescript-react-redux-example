@@ -1,18 +1,17 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
-
-const FormGroup = ({ children, style = {}, className = '' }) => {
+const FormGroup = ({ children, style = {} }) => {
   return (
-    <div className={ `p2 ${ className }` }
-         style={ objectAssign({}, styles.base, style) }>
+    <div style={ objectAssign({}, ...styles.base, style) }>
       { children }
     </div>
   );
 };
 
 const styles = {
-  base: {},
+  base: [ Bass.p2 ],
 };
 
 

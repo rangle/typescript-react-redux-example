@@ -1,22 +1,21 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
+const Bass = require('basscss-radium');
 
 
-const ModalContent = ({ children, style = {}, className = '' }) => {
+const ModalContent = ({ children, style = {} }) => {
   return (
-    <div
-      className={ `${ className } p1 z4 bg-white` }
-      style={ objectAssign({}, styles.base, style) }>
+    <div style={ objectAssign({}, ...styles.base, style) }>
       { children }
     </div>
   );
 };
 
 const styles = {
-  base: {
+  base: [Bass.p1, Bass.z4, Bass.bgWhite, {
     width: '25%',
     margin: '4rem auto',
-  },
+  }],
 };
 
 
