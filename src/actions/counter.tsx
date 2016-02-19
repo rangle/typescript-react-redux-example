@@ -1,4 +1,4 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/index';
 
 
 export function increment() {
