@@ -1,5 +1,12 @@
 .DS_Store
+.idea
 node_modules
 dist
 npm-debug.log
 typings
+src/**/*.js
+src/**/*.js.map
+test/**/*.js
+test/**/*.js.map
+
+
