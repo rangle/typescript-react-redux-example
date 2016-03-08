@@ -19,5 +19,10 @@
     "redux-logger": "github:DefinitelyTyped/DefinitelyTyped/redux-logger/redux-logger.d.ts#7136728255d96038795d93c3e4b43c3c7de8ac1e",
     "redux-thunk": "github:DefinitelyTyped/DefinitelyTyped/redux-thunk/redux-thunk.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
     "webpack": "github:DefinitelyTyped/DefinitelyTyped/webpack/webpack.d.ts#70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e"
+  },
+  "ambientDevDependencies": {
+    "redux-devtools": "github:DefinitelyTyped/DefinitelyTyped/redux-devtools/redux-devtools.d.ts#36e2ea37c5b57e0eaa7f2cddf52a1fa255a8b8f3",
+    "redux-devtools-dock-monitor": "github:DefinitelyTyped/DefinitelyTyped/redux-devtools-dock-monitor/redux-devtools-dock-monitor.d.ts#a507ed9ef2955734b3cf362a0a74b21c7241cebc",
+    "redux-devtools-log-monitor": "github:DefinitelyTyped/DefinitelyTyped/redux-devtools-log-monitor/redux-devtools-log-monitor.d.ts#a507ed9ef2955734b3cf362a0a74b21c7241cebc"
   }
 }

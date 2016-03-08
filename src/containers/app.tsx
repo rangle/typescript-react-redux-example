@@ -8,6 +8,7 @@ import LoginModal from '../components/login-modal';
 import Logo from '../components/logo';
 import Navigator from '../components/navigator';
 import NavigatorItem from '../components/navigator-item';
+import DevTools from './dev-tools';
 
 interface IAppProps extends React.Props<any> {
   session: any;
@@ -69,6 +70,7 @@ class App extends React.Component<IAppProps, void> {
         <Content isVisible={ isLoggedIn }>
           { children }
         </Content>
+        <DevTools />
       </div>
     );
   };

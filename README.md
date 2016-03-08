@@ -13,6 +13,16 @@ This runs a development mode server with live reload etc.
 
 Open `http://localhost:8080` in your browser.
 
+### Debugging with DevTools
+If you're using the chrome add in it will automatically recognize it and initialize it.
+
+If you prefer using the web-based DevTools
+1. Add DevTools component, i.e. `<DevTools />` to the src/containers/app.tsx within the outer most div 
+2. Uncomment the following line in the src/store/configure-store.ts file 
+```typescript
+devTools = require('../containers/dev-tools').default.instrument();
+```
+
 ### Production
 
 ```bash
