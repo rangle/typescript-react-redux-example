@@ -75,7 +75,7 @@
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.1",
     "raw-loader": "^0.5.1",
-    "react": "^0.14.8",
+    "react": "^15.0.1",
     "react-dom": "^0.14.8",
     "react-redux": "^4.0.6",
     "react-router": "^2.0.0",
