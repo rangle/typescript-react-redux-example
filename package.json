@@ -90,7 +90,7 @@
     "style-loader": "^0.13.0",
     "ts-loader": "^0.8.0",
     "ts-node": "^0.7.0",
-    "tslint": "^3.4.0",
+    "tslint": "^3.7.3",
     "tslint-loader": "^2.1.0",
     "typescript": "^1.8.2",
     "typings": "^0.7.9",
