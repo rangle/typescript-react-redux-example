@@ -12,7 +12,18 @@ export function loginUser() {
   return (dispatch, getState) => {
     const username = getState().form.login.username.value;
     const password = getState().form.login.password.value;
-
+    let loginPromise = login(username, password);
+    loginPromise.then((res) => {
+            dispatch({
+              type: FORM_RESET,
+              form: 'login',
+            });
+            return res;
+          }, function(reason) {
+          // rejection
+          console.error(reason);
+    });
+    
     return dispatch({
       types: [
         LOGIN_USER_PENDING,
@@ -20,15 +31,7 @@ export function loginUser() {
         LOGIN_USER_ERROR,
       ],
       payload: {
-        promise: login(username, password)
-          .then((res) => {
-            dispatch({
-              type: FORM_RESET,
-              form: 'login',
-            });
-
-            return res;
-          }),
+        promise: loginPromise,
       },
     });
   };
