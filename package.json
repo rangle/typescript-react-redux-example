@@ -79,7 +79,7 @@
     "object-assign": "^4.0.1",
     "postcss-cssnext": "^2.4.0",
     "postcss-import": "^8.0.2",
-    "postcss-loader": "^0.8.1",
+    "postcss-loader": "^0.9.0",
     "postcss-modules-local-by-default": "^1.0.1",
     "raw-loader": "^0.5.1",
     "react": "^15.0.1",
