@@ -1,21 +1,14 @@
 {
-  "ambientDependencies": {
-    "assert": "github:DefinitelyTyped/DefinitelyTyped/assert/assert.d.ts#58697597421d259f656dad7a2a5f20140c8a8051",
+  "globalDependencies": {
     "chai": "registry:dt/chai#3.4.0+20160317120654",
     "classnames": "registry:dt/classnames#0.0.0+20160316155526",
-    "enzyme": "registry:dt/enzyme#1.2.0+20160324040416",
-    "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
-    "history": "github:DefinitelyTyped/DefinitelyTyped/react-router/history.d.ts#99f6493ffb1ef5479c6154ec9f82a47178bbf8b6",
-    "immutable": "npm:immutable/dist/immutable.d.ts",
-    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#cf2a968f0edd7d30773f7d23fe3708fa029d5ab7",
-    "jsdom": "github:DefinitelyTyped/DefinitelyTyped/jsdom/jsdom.d.ts#ffad52fa9cfba2ab1a08da7fecbb944264184d91",
-    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#d6dd320291705694ba8e1a79497a908e9f5e6617",
-    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#1c56e368e17bb28ca57577250624ca5bd561aa81",
-    "object-assign": "github:DefinitelyTyped/DefinitelyTyped/object-assign/object-assign.d.ts#70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e",
-    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#f407264835650f5f38d4bb2c515a79e7a835916b",
-    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#ca5bfe76d2d9bf6852cbc712d9f3e0047c93486e",
-    "sinon": "registry:dt/sinon#1.16.0+20160317120654",
-    "webpack": "github:DefinitelyTyped/DefinitelyTyped/webpack/webpack.d.ts#70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e",
-    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160412133644"
+    "enzyme": "registry:dt/enzyme#2.3.0+20160525083955",
+    "es6-promise": "registry:dt/es6-promise#0.0.0+20160423074304",
+    "mocha": "registry:dt/mocha#2.2.5+20160317120654",
+    "node": "registry:dt/node#6.0.0+20160524002506",
+    "react": "registry:dt/react#0.14.0+20160526134601",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723",
+    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160524142046"
   }
 }

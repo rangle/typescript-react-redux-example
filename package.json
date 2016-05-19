@@ -78,7 +78,7 @@
     "file-loader": "^0.8.4",
     "history": "^2.0.1",
     "html-webpack-plugin": "^2.9.0",
-    "immutable": "^3.7.6",
+    "immutable": "^3.8.1",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.5.0",
     "nodemon": "^1.9.2",
