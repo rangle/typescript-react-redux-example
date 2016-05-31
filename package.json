@@ -76,7 +76,7 @@
     "eslint": "^2.8.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.4",
-    "history": "^2.0.1",
+    "history": "^3.0.0",
     "html-webpack-plugin": "^2.9.0",
     "immutable": "^3.8.1",
     "istanbul": "^1.0.0-alpha.2",
