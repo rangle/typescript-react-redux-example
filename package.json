@@ -8,21 +8,35 @@
   },
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production webpack -p",
+    "build": "cross-env NODE_ENV=production webpack -p --bail",
     "clean": "rimraf dist/",
     "dev:server": "cross-env NODE_ENV=development PORT=3000 nodemon server/node-server.js",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
-    "dev": "concurrently -r 'npm run dev:client' 'npm run dev:server'",
-    "lint": "npm run lint-ts && npm run lint-js && npm run lint-css",
+    "dev": "concurrently -kr 'npm run dev:client' 'npm run dev:server'",
+    "lint": "concurrently 'npm run lint-ts' 'npm run lint-js' 'npm run lint-css'",
     "lint-css": "stylelint './src/**/*.css'",
     "lint-ts": "tslint 'src/**/*.tsx' 'src/**/*.ts' 'test/**/*.tsx' 'test/**/*.ts'",
     "lint-js": "eslint '**/*.js' --ignore-path .gitignore",
+    "mocha-coverage": "ts-node ./node_modules/.bin/_mocha",
     "postinstall": "npm run typings && npm run build",
     "start": "cross-env NODE_ENV=production node server/node-server.js",
-    "pretest": "npm run lint",
-    "test": "ts-node ./node_modules/.bin/_mocha --opts ./test-utils/mocha.opts",
-    "test:watch": "ts-node ./node_modules/.bin/_mocha --opts ./test-utils/mocha.opts -w",
-    "typings": "rimraf typings/ && typings install"
+    "pretest": "rimraf coverage/ & npm run lint",
+    "test": "nyc -r lcov -r text-summary npm run mocha-coverage",
+    "posttest": "nyc check-coverage --lines 80 --statements 80 --functions 80 --branches 80",
+    "test:watch": "mocha -w",
+    "pretypings": "rimraf typings/",
+    "typings": "typings install"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.test.ts",
+      "**/*.test.tsx",
+      "test/**"
+    ]
   },
   "keywords": [
     "react",
@@ -79,9 +93,9 @@
     "history": "^3.0.0",
     "html-webpack-plugin": "^2.9.0",
     "immutable": "^3.8.1",
-    "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.5.0",
     "nodemon": "^1.9.2",
+    "nyc": "^6.4.4",
     "object-assign": "^4.0.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",

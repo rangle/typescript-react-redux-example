@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import fireAction from '../../test-utils/fire-action';
+import fireAction from '../../test/fire-action';
 import counterReducer from './counter';
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants';
 import { Map } from 'immutable';
