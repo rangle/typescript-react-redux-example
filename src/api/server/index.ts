@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 
-export const BASE_URL = 'http://localhost:8080/api';
+export const BASE_URL = '/api';
 
 export function post(path, data) {
   return fetch(BASE_URL + path, {
