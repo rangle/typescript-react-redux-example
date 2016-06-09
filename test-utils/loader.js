@@ -7,13 +7,13 @@ const outputs = {}; // filename => { code, map }
 
 const babelOpts = {
   presets: [
-    require('babel-preset-es2015')
+    require('babel-preset-es2015'),
   ],
   inputSourceMap: true,
   ast: false,
 };
 
-var typescriptLoader = null;
+let typescriptLoader = null;
 
 function registerBabel() {
   typescriptLoader = require.extensions['.ts'];
@@ -21,10 +21,10 @@ function registerBabel() {
   Object.defineProperty(require.extensions, '.tsx', {
     enumerable: true,
 
-    set: function (newTSLoader) {
+    set: function set(newTSLoader) {
       typescriptLoader = newTSLoader;
     },
-    get: function () {
+    get: function get() {
       return loadPipeline;
     },
   });
@@ -32,15 +32,15 @@ function registerBabel() {
   sourceMapSupport.install({
     handleUncaughtExceptions: false,
 
-    retrieveFile: function (filename) {
+    retrieveFile: function retrieveFile(filename) {
       return outputs
           && outputs[filename]
           && outputs[filename].code;
     },
 
-    retrieveSourceMap: function (filename) {
+    retrieveSourceMap: function retrieveSourceMap(filename) {
       const map = outputs && outputs[filename] && outputs[filename].map;
-      if (map == null) {
+      if (!map) {
         return null;
       }
 
@@ -68,9 +68,9 @@ function loadPipeline(m, filename) {
 function compile(filename) {
   const typescriptCode = mockLoad(typescriptLoader, filename);
 
-  const generated = babel.transform(typescriptCode, babelOpts);
+  const { code, map } = babel.transform(typescriptCode, babelOpts);
 
-  outputs[filename] = {code: generated.code, map: generated.map};
+  outputs[filename] = { code, map };
 
   return generated.code;
 }
@@ -78,8 +78,8 @@ function compile(filename) {
 function mockLoad(loader, filename) {
   let content;
 
-  var module = {
-    _compile: function (_content) {
+  const module = {
+    _compile: function _compile(_content) {
       content = _content;
     },
   };
