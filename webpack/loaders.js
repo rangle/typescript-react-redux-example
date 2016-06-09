@@ -8,8 +8,8 @@ exports.tslint = {
 
 exports.tsx = {
   test: /\.tsx?$/,
-  loader: 'ts',
-  exclude: /(node_modules|test-utils|\.test\.ts$)/,
+  loader: 'awesome-typescript-loader',
+  exclude: /node_modules/,
 };
 
 exports.html = {

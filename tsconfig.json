@@ -3,13 +3,20 @@
   "buildOnSave": false,
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
+    "target": "es6",
+    "jsx": "react",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "removeComments": false,
-    "sourceMap": true,
-    "jsx": "react"
+    "sourceMap": false,
+    "inlineSourceMap": true,
+    "noEmitHelpers": false
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true,
+    "useCache": false,
+    "emitRequireType": false
   },
   "exclude": [
     "node_modules",
