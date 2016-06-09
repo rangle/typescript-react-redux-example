@@ -68,9 +68,9 @@ function loadPipeline(m, filename) {
 function compile(filename) {
   const typescriptCode = mockLoad(typescriptLoader, filename);
 
-  const { code, map } = babel.transform(typescriptCode, babelOpts);
+  const generated = babel.transform(typescriptCode, babelOpts);
 
-  outputs[filename] = { code, map };
+  outputs[filename] = { code: generated.code, map: generated.map };
 
   return generated.code;
 }
