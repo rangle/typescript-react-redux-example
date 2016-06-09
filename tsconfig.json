@@ -8,7 +8,7 @@
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "removeComments": false,
-    "sourceMap": true,
+    "inlineSourceMap": true,
     "jsx": "react"
   },
   "exclude": [
