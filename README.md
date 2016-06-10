@@ -33,7 +33,7 @@ Open `http://localhost:8080` in your browser.
 
 #### Single Run
 ```bash
-$ npm run test
+$ npm test
 ```
 
 #### Watch Files
@@ -43,7 +43,9 @@ $ npm run test:watch
 
 #### Coverage
 ```bash
-$ npm run cover
+# printed after `npm test`. To get the last run's coverage report:
+$ npm install -g nyc
+$ nyc report
 ```
 
 #### Connecting to remote APIs
