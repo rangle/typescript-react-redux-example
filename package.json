@@ -21,7 +21,7 @@
     "start": "cross-env NODE_ENV=production node server/node-server.js",
     "pretest": "npm run lint",
     "test": "ts-babel-node ./node_modules/.bin/_mocha --opts ./test-utils/mocha.opts",
-    "test:watch": "ts-babel-node ./node_modules/.bin/_mocha --opts ./test-utils/mocha.opts -w",
+    "test:watch": "ts-babel-node ./node_modules/.bin/_mocha --opts ./test-utils/mocha.opts --watch --watch-extensions ts,tsx",
     "typings": "rimraf typings/ && typings install"
   },
   "keywords": [
