@@ -30,7 +30,12 @@ class CounterPage extends React.Component<ICounterPageProps, void> {
  
     return (
       <Container testid="counter" size={2} center>
-      <h2 data-testid="counter-heading" className="center caps" id="qa-counter-heading">Counter</h2>
+      <h2
+        data-testid="counter-heading"
+        className="center caps"
+        id="qa-counter-heading">
+        Counter
+      </h2>
 
       <Counter
         counter={ counter }

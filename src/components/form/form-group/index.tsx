@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface IFormGroupProps extends React.Props<any> {
-  testid?: string
+  testid?: string;
 };
 
 export default function FormGroup({
@@ -9,7 +9,9 @@ export default function FormGroup({
   testid = ''
 }: IFormGroupProps) {
   return (
-    <div data-testid={ testid } className="py2">
+    <div
+      data-testid={ testid }
+      className="py2">
       { children }
     </div>
   );

@@ -57,7 +57,11 @@ class App extends React.Component<IAppProps, void> {
           </NavigatorItem>
           <div className="flex flex-auto"></div>
           <NavigatorItem isVisible={ isLoggedIn } mr>
-            <div data-testid="user-profile" className="h3">{ `${ firstName } ${ lastName }` }</div>
+            <div
+              data-testid="user-profile"
+              className="h3">
+              { `${ firstName } ${ lastName }` }
+            </div>
           </NavigatorItem>
           <NavigatorItem isVisible={ isLoggedIn }>
             <Button onClick={ logout } className="bg-red white">
