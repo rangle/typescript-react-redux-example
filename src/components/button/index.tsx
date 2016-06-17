@@ -6,6 +6,7 @@ interface IButtonProps extends React.Props<any> {
   type?: string;
   className?: string;
   id?: string;
+  testid?: string;
 };
 
 export default function Button({
@@ -13,12 +14,14 @@ export default function Button({
   type = 'button',
   className = '',
   id = '',
+  testid = '',
   children = null
 }: IButtonProps) {
   const buttonClasses = classNames('btn', 'btn-primary', className);
 
   return (
     <button
+      data-testid={ testid }
       id={ id }
       type={ type }
       className={ buttonClasses }

@@ -37,8 +37,8 @@ module.exports = {
               token: 'abcd1234',
               expires: '2020-01-01',
               profile: {
-                firstName: authorized[0].First,
-                lastName: authorized[0].Last,
+                first: authorized[0].First,
+                last: authorized[0].Last,
               },
             },
           });

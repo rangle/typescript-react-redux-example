@@ -1,10 +1,15 @@
 import * as React from 'react';
 
-interface INavigatorProps extends React.Props<any> {}
+interface INavigatorProps extends React.Props<any> {
+  testid?: string
+}
 
-export default function Navigator({ children = null }: INavigatorProps) {
+export default function Navigator({
+  children = null,
+  testid = ''
+}: INavigatorProps) {
   return (
-    <nav className="flex items-center p1 bg-white border-bottom">
+    <nav data-testid={ testid } className="flex items-center p1 bg-white border-bottom">
       { children }
     </nav>
   );

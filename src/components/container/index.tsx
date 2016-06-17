@@ -4,12 +4,14 @@ import * as classNames from 'classnames';
 interface IContainerProps extends React.Props<any> {
   size: number;
   center: boolean;
+  testid?: string;
 };
 
 export default function Container({
   size = 1,
   center = false,
-  children = null
+  children = null,
+  testid = ''
 }: IContainerProps) {
   const containerClasses = classNames('clearfix', 'px1', {
     'max-width-1': size === 1,
@@ -20,7 +22,7 @@ export default function Container({
   });
 
   return (
-    <div className={ containerClasses }>
+    <div data-testid={ testid } className={ containerClasses }>
       { children }
     </div>
   );

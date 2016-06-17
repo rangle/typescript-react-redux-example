@@ -5,6 +5,7 @@ interface IAlertProps extends React.Props<any> {
   isVisible?: boolean;
   status?: string;
   id?: string;
+  testid?: string;
 };
 
 const statusClasses = {
@@ -18,7 +19,8 @@ export default function Alert({
   children = null,
   isVisible,
   status = 'info',
-  id = ''
+  id = '',
+  testid = ''
 }: IAlertProps) {
   const alertClasses = classNames(['p2', 'bold'], {
     block: isVisible,
@@ -29,6 +31,7 @@ export default function Alert({
   return (
     <div
       id={ id }
+      data-testid={ testid }
       className={ alertClasses }>
       { children }
     </div>

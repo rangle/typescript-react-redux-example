@@ -16,17 +16,25 @@ export default function Counter({
   return (
     <div className="flex">
       <Button
-          id="qa-decrement-button"
-          className="bg-black col-2"
-          onClick={decrement}>
+        testid="counter-decrementButton"
+        id="qa-decrement-button"
+        className="bg-black col-2"
+        onClick={decrement}>
         -
       </Button>
 
-      <div id="qa-counter-div" className="flex-auto center h1">
+      <div
+        data-testid="counter-result"
+        id="qa-counter-div"
+        className="flex-auto center h1">
         {counter}
       </div>
 
-      <Button id="qa-increment-button" className="col-2" onClick={increment}>
+      <Button
+        testid="counter-incrementButton"
+        id="qa-increment-button"
+        className="col-2"
+        onClick={increment}>
         +
       </Button>
     </div>

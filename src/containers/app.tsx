@@ -35,8 +35,8 @@ class App extends React.Component<IAppProps, void> {
     const { children, session, login, logout } = this.props;
     const token = session.get('token', false);
     const isLoggedIn = token && token !== null && typeof token !== 'undefined';
-    const firstName = session.getIn(['user', 'firstName'], '');
-    const lastName = session.getIn(['user', 'lastName'], '');
+    const firstName = session.getIn(['user', 'first'], '');
+    const lastName = session.getIn(['user', 'last'], '');
 
     return (
       <div>
@@ -45,7 +45,7 @@ class App extends React.Component<IAppProps, void> {
           isPending={ session.get('isLoading', false) }
           hasError={ session.get('hasError', false) }
           isVisible={ !isLoggedIn } />
-        <Navigator>
+        <Navigator testid="navigator">
           <NavigatorItem mr>
             <Logo />
           </NavigatorItem>
@@ -57,7 +57,7 @@ class App extends React.Component<IAppProps, void> {
           </NavigatorItem>
           <div className="flex flex-auto"></div>
           <NavigatorItem isVisible={ isLoggedIn } mr>
-            <b>{ `${ firstName } ${ lastName }` }</b>
+            <div data-testid="user-profile" className="h3">{ `${ firstName } ${ lastName }` }</div>
           </NavigatorItem>
           <NavigatorItem isVisible={ isLoggedIn }>
             <Button onClick={ logout } className="bg-red white">
