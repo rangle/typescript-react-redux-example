@@ -92,7 +92,7 @@
     "postcss-cssnext": "^2.4.0",
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.9.1",
-    "postcss-modules-local-by-default": "^1.0.1",
+    "postcss-modules-local-by-default": "^1.0.2",
     "raw-loader": "^0.5.1",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
