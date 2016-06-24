@@ -9,7 +9,7 @@ const { routerMiddleware } = require('react-router-redux');
 
 import promiseMiddleware from '../middleware/promise-middleware';
 import logger from './logger';
-import rootReducer from '../reducers';
+import rootReducer from './rootReducer';
 
 function configureStore(initialState) {
   const store = compose(
@@ -49,8 +49,8 @@ function _getEnhancers() {
 
 function _enableHotLoader(store) {
   if (__DEV__ && module.hot) {
-    module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers');
+    module.hot.accept('./rootReducer', () => {
+      const nextRootReducer = require('./rootReducer');
       store.replaceReducer(nextRootReducer);
     });
   }

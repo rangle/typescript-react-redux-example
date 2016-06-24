@@ -1,9 +1,20 @@
-import {
-  INCREMENT_COUNTER,
-  DECREMENT_COUNTER,
-  LOGOUT_USER
-} from '../constants';
 import { fromJS } from 'immutable';
+import {LOGOUT_USER} from '../session';
+
+export const INCREMENT_COUNTER = 'App/INCREMENT_COUNTER';
+export const DECREMENT_COUNTER = 'App/DECREMENT_COUNTER';
+// Actions
+export function increment() {
+  return {
+    type: INCREMENT_COUNTER,
+  };
+}
+
+export function decrement() {
+  return {
+    type: DECREMENT_COUNTER,
+  };
+}
 
 
 const INITIAL_STATE = fromJS({

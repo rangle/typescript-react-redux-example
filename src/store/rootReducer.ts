@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 const { routerReducer } = require('react-router-redux');
 const formReducer = require('redux-form').reducer;
-import counter from './counter';
-import session from './session';
+import counter from '../feature/counter';
+import session from '../feature/session';
 
 const rootReducer = combineReducers({
   session,
