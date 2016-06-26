@@ -5,15 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SplitByPathPlugin = require('webpack-split-by-path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 const basePlugins = [
   new webpack.DefinePlugin({
     __DEV__: process.env.NODE_ENV !== 'production',
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   }),
-  new SplitByPathPlugin([
-    { name: 'vendor', path: [__dirname + '/node_modules/'] },
-  ]),
   new HtmlWebpackPlugin({
     template: './src/index.html',
     inject: 'body',
@@ -33,6 +31,9 @@ const devPlugins = [
 ];
 
 const prodPlugins = [
+  new SplitByPathPlugin([
+    { name: 'vendor', path: [path.join(__dirname, '..', 'node_modules/')] },
+  ]),
   new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false,
