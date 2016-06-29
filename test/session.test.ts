@@ -1,14 +1,14 @@
 import * as assert from 'assert';
-import fireAction from '../../test-utils/fire-action';
-import sessionReducer from '../reducers/session';
-
-import {
-  LOGIN_USER_PENDING,
-  LOGIN_USER_SUCCESS,
-  LOGIN_USER_ERROR,
-  LOGOUT_USER,
-} from '../../src/constants/index';
-
+import fireAction from './utils/fire-action';
+import sessionReducer,
+  { loginUser,
+    logoutUser,
+    LOGIN_USER_PENDING,
+    LOGIN_USER_SUCCESS,
+    LOGIN_USER_ERROR,
+    LOGOUT_USER
+  }
+  from '../src/feature/session';
 import { Map } from 'immutable';
 
 let state = sessionReducer();

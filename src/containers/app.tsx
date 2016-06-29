@@ -2,7 +2,7 @@ import * as React from 'react';
 const connect = require('react-redux').connect;
 const Link = require('react-router').Link;
 
-import { loginUser, logoutUser } from '../actions/session';
+import { loginUser, logoutUser } from '../feature/session';
 import Button from '../components/button';
 import Content from '../components/content';
 import LoginModal from '../components/login/login-modal';
