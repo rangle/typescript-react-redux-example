@@ -77,7 +77,7 @@ class LoginForm extends React.Component<ILoginFormProps, void> {
     );
   }
 
-  static validate(values) {
+  static validate(values : any = {}) {
     const errors = { username: '', password: '' };
 
     if (!values.username) {
