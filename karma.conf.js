@@ -50,7 +50,7 @@ module.exports = (config) => {
       entry: './src/tests.entry.ts',
       output: null,
       devtool: 'inline-source-map',
-      verbose: true,
+      verbose: false,
       module: {
         loaders: combinedLoaders(),
         postLoaders: config.singleRun
