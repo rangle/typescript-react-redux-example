@@ -7,12 +7,10 @@
     "node": "registry:dt/node#6.0.0+20160524002506",
     "react": "registry:dt/react#0.14.0+20160526134601",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
-    "sinon": "registry:dt/sinon#1.16.0+20160517064723",
-    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160524142046"
-  },
-  "dependencies": {
     "react-router": "registry:npm/react-router#2.4.0+20160628165748",
     "react-router-redux": "registry:npm/react-router-redux#4.0.0+20160602212457",
-    "redux-thunk": "registry:npm/redux-thunk#2.0.0+20160525185520"
+    "redux-thunk": "registry:npm/redux-thunk#2.0.0+20160525185520",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723",
+    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160524142046",
   }
 }
