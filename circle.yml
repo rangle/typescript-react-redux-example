@@ -15,6 +15,7 @@ dependencies:
 
 test:
   post:
+    - cp -R coverage $CIRCLE_ARTIFACTS
     - npm run build
     - npm start:
         background: true
