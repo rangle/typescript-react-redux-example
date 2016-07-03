@@ -1,3 +1,0 @@
---require test-utils/loader
---require test-utils/entry.ts
-**/*.test.tsx **/*.test.ts

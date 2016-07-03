@@ -6,13 +6,12 @@ const loaders = require('./webpack/loaders');
 const plugins = require('./webpack/plugins');
 const postcssInit = require('./webpack/postcss');
 
-const baseAppEntries = [ './src/index.tsx' ];
-const devAppEntries = [ 'webpack-hot-middleware/client?reload=true' ];
-const appEntries = baseAppEntries
-  .concat(process.env.NODE_ENV === 'development' ? devAppEntries : []);
+const applicationEntries = process.env.NODE_ENV === 'development'
+  ? [ 'webpack-hot-middleware/client?reload=true' ]
+  : [ ];
 
 module.exports = {
-  entry: { app: appEntries },
+  entry: [ './src/index.tsx' ].concat(applicationEntries),
 
   output: {
     path: path.join(__dirname, 'dist'),
@@ -22,8 +21,25 @@ module.exports = {
     chunkFilename: '[id].chunk.js',
   },
 
-  devtool: 'source-map',
-  resolve: { extensions: ['', '.webpack.js', '.web.js', '.tsx', '.ts', '.js'] },
+  devtool: process.env.NODE_ENV === 'production' ?
+    'source-map' :
+    'inline-source-map',
+
+  resolve: {
+    extensions: [
+      '',
+      '.webpack.js',
+      '.web.js',
+      '.tsx',
+      '.ts',
+      '.js',
+      '.json',
+    ],
+    alias: {
+      'sinon': 'sinon/pkg/sinon',
+    },
+  },
+
   plugins: plugins,
 
   devServer: {
@@ -44,7 +60,16 @@ module.exports = {
       loaders.woff,
       loaders.woff2,
       loaders.ttf,
+      loaders.json,
+      loaders.sinon,
     ],
+    noParse: [ /sinon/ ],
+  },
+
+  externals: {
+    'react/lib/ReactContext': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/addons': true,
   },
 
   postcss: postcssInit,

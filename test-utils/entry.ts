@@ -13,3 +13,5 @@ const rh = require('require-hacker');
 ].forEach((type) => {
   rh.hook(type, () => `module.exports = ""`);
 });
+
+import '../src/index.tsx';
