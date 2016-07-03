@@ -80,6 +80,8 @@ module.exports = (config) => {
       reports: {
         html: 'coverage',
       },
+      timeoutNotCreated: 2000,
+      timeoutNoMoreFiles: 2000,
     },
 
     // only output json report to be remapped by remap-istanbul
