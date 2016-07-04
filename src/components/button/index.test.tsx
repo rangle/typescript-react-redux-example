@@ -1,48 +1,44 @@
-import { assert } from 'chai';
 import { shallow, render } from 'enzyme';
-import * as sinon from 'sinon';
 
 import * as React from 'react';
-import Button from './index';
 
+import Button from './index';
 
 describe('Button Component', () => {
   it('should create a button with a default type and classes', () => {
     const wrapper = shallow(<Button>OK</Button>);
     const button = wrapper.find('button');
 
-    assert.strictEqual(button.length, 1,
-      'button not found');
-    assert.strictEqual(button.text(), 'OK',
-      'child contents not found');
-    assert.strictEqual(button.prop('type'), 'button',
-      'default type is not "button"');
-    assert.isTrue(button.hasClass('btn-primary'));
+    expect(button.length).toBe(1);
+    expect(button.text()).toBe('OK');
+    expect(button.prop('type')).toBe('button');
+    expect(button.hasClass('btn-primary')).toBe(true);
   });
 
   it('should allow for a custom css class in addition to the default', () => {
-    const wrapper = render(
-      <Button className="bg-green">OK</Button>
-    );
+    const wrapper = render(<Button className="bg-green">OK</Button>);
     const button = wrapper.find('button');
-    assert.isTrue(button.hasClass('bg-green'));
-    assert.isTrue(button.hasClass('btn-primary'));
+
+    expect(button.hasClass('bg-green')).toBe(true);
+    expect(button.hasClass('btn-primary')).toBe(true);
   });
 
   it('should create a submit button', () => {
     const wrapper = shallow(<Button type="submit">Submit</Button>);
     const button = wrapper.find('button');
 
-    assert.strictEqual(button.prop('type'), 'submit');
+    expect(button.prop('type')).toBe('submit');
   });
 
   it('should respond to click events', () => {
-    const onButtonClick = sinon.spy();
-    const wrapper = shallow(
-      <Button onClick={onButtonClick} />
-    );
+    const onButtonClick = jasmine.createSpy('onButtonClick');
+
+    const wrapper = shallow(<Button onClick={onButtonClick} />);
+
     wrapper.simulate('click');
-    assert.isTrue(onButtonClick.calledOnce);
+
+    expect(onButtonClick).toHaveBeenCalled();
+    expect(onButtonClick.calls.count()).toBe(1);
   });
 
 });

@@ -32,11 +32,6 @@ exports.css = {
   exclude: /node_modules/,
 };
 
-exports.sinon = {
-  test: /sinon\.js$/,
-  loader: 'imports?define=>false,require=>false',
-};
-
 exports.json = {
   test: /\.json$/,
   loader: 'json',

@@ -1,6 +1,6 @@
-import immutableToJS from './immutable-to-js';
-import * as assert from 'assert';
 import { fromJS } from 'immutable';
+
+import immutableToJS from './immutable-to-js';
 
 describe('immutableToJS', () => {
   const mockState = {
@@ -21,10 +21,11 @@ describe('immutableToJS', () => {
   };
 
   it('should ignore regular JS structures', () => {
-    assert.deepEqual(mockState, immutableToJS(mockState));
+    expect(mockState).toEqual(immutableToJS(mockState));
   });
 
   it('should convert Immutable structures to JS structures', () => {
-    assert.deepEqual(mockState, immutableToJS(stateWithImmutable));
+    expect(mockState).toEqual(immutableToJS(stateWithImmutable));
   });
 });
+

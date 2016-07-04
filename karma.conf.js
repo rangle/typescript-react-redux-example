@@ -56,7 +56,6 @@ module.exports = (config) => {
         postLoaders: config.singleRun
           ? [ loaders.istanbulInstrumenter ]
           : [ ],
-        noParse: [ /sinon/ ],
       },
       stats: {
         colors: true,

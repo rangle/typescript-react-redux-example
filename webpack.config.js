@@ -35,9 +35,6 @@ module.exports = {
       '.js',
       '.json',
     ],
-    alias: {
-      'sinon': 'sinon/pkg/sinon',
-    },
   },
 
   plugins: plugins,
@@ -61,9 +58,7 @@ module.exports = {
       loaders.woff2,
       loaders.ttf,
       loaders.json,
-      loaders.sinon,
     ],
-    noParse: [ /sinon/ ],
   },
 
   externals: {
