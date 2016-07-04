@@ -23,7 +23,7 @@ export default function Counter({
       </Button>
 
       <div id="qa-counter-div" className="flex-auto center h1">
-        {counter.toString()}
+        {counter}
       </div>
 
       <Button id="qa-increment-button" className="col-2" onClick={increment}>
