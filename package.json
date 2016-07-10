@@ -111,7 +111,7 @@
     "react-router": "^2.5.2",
     "react-router-redux": "^4.0.5",
     "redux": "^3.4.0",
-    "redux-form": "^5.3.0",
+    "redux-form": "^6.0.0",
     "redux-localstorage": "^0.4.0",
     "redux-logger": "^2.6.0",
     "redux-thunk": "^2.1.0",
