@@ -27,7 +27,7 @@ minified version of the client.
 
 Open `http://localhost:8080` in your browser.
 
-> Note: Demo username/password can be found [here](https://github.com/rangle/typescript-react-redux-starter/blob/master/src/api/mock/users.tsx)
+> Note: Demo username/password can be found [here](https://github.com/rangle/typescript-react-redux-starter/blob/master/server/users.json)
 
 ### Tests
 
