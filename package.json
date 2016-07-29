@@ -105,7 +105,7 @@
     "postcss-modules-local-by-default": "^1.0.2",
     "raw-loader": "^0.5.1",
     "react": "^15.2.1",
-    "react-addons-test-utils": "^15.2.1",
+    "react-addons-test-utils": "^15.3.0",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.4",
     "react-router": "^2.5.2",
