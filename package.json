@@ -14,7 +14,7 @@
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
     "dev": "concurrently -r \"npm run dev:client\" \"npm run dev:server\"",
     "lint": "npm run lint-ts && npm run lint-js && npm run lint-css",
-    "lint-css": "stylelint './src/**/*.css'",
+    "lint-css": "stylelint \"./src/**/*.css\"",
     "lint-ts": "tslint \"src/**/*.tsx\" \"src/**/*.ts\" \"test/**/*.tsx\" \"test/**/*.ts\"",
     "lint-js": "eslint \"**/*.js\" --ignore-path .gitignore",
     "postinstall": "npm run typings && npm run build",
