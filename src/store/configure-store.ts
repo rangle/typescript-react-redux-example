@@ -2,6 +2,7 @@ import {
   createStore,
   applyMiddleware,
   compose,
+  Middleware,
 } from 'redux';
 import { fromJS } from 'immutable';
 import { browserHistory } from 'react-router';
@@ -18,16 +19,21 @@ import rootReducer from '../reducers';
 declare const __DEV__: boolean; // from webpack
 
 function configureStore(initialState) {
-  const store = compose(
-    _getMiddleware(),
-    ..._getEnhancers()
-  )(createStore)(rootReducer, initialState);
+  const store = createStore(
+    rootReducer,
+    initialState,
+    compose(
+      applyMiddleware(..._getMiddleware()),
+      persistState('session', _getStorageConfig()),
+      __DEV__ && environment.devToolsExtension ?
+        environment.devToolsExtension() :
+        f => f));
 
   _enableHotLoader(store);
   return store;
 }
 
-function _getMiddleware() {
+function _getMiddleware(): Middleware[] {
   let middleware = [
     routerMiddleware(browserHistory),
     promiseMiddleware,
@@ -38,22 +44,10 @@ function _getMiddleware() {
     middleware = [...middleware, logger];
   }
 
-  return applyMiddleware(...middleware);
+  return middleware;
 }
 
 const environment: any = window || this;
-
-function _getEnhancers() {
-  let enhancers = [
-    persistState('session', _getStorageConfig()),
-  ];
-
-  if (__DEV__ && environment.devToolsExtension) {
-    enhancers = [...enhancers, environment.devToolsExtension() ];
-  }
-
-  return enhancers;
-}
 
 function _enableHotLoader(store) {
   if (!__DEV__) {
