@@ -108,7 +108,7 @@
     "source-map-support": "^0.4.0",
     "style-loader": "^0.13.0",
     "stylelint": "^6.8.0",
-    "stylelint-webpack-plugin": "^0.2.0",
+    "stylelint-webpack-plugin": "^0.3.0",
     "ts-helpers": "^1.1.1",
     "tslint": "^3.7.4",
     "tslint-loader": "^2.1.0",
