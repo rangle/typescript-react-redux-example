@@ -1,3 +1,5 @@
+declare var require: any;
+
 import 'babel-polyfill';
 
 import 'ts-helpers';

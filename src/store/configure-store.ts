@@ -1,3 +1,7 @@
+/// <reference path="../../node_modules/@types/node/index.d.ts" />
+
+declare var require: any;
+
 import {
   createStore,
   applyMiddleware,

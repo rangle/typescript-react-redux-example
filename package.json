@@ -17,13 +17,12 @@
     "lint-css": "stylelint \"./src/**/*.css\"",
     "lint-ts": "tslint \"src/**/*.tsx\" \"src/**/*.ts\" \"test/**/*.tsx\" \"test/**/*.ts\"",
     "lint-js": "eslint \"**/*.js\" --ignore-path .gitignore",
-    "postinstall": "npm run typings && npm run build",
+    "postinstall": "npm run build",
     "start": "cross-env NODE_ENV=production node server/node-server.js",
     "pretest": "npm run lint",
     "test": "karma start --singleRun true",
     "test:watch": "karma start --singleRun false",
-    "posttest": "istanbul check-coverage --statement 75 --branch 50 --function 50",
-    "typings": "rimraf typings/ && typings install"
+    "posttest": "istanbul check-coverage --statement 75 --branch 50 --function 50"
   },
   "keywords": [
     "react",
@@ -46,6 +45,15 @@
     "winston": "^2.1.1"
   },
   "devDependencies": {
+    "@types/classnames": "0.0.32",
+    "@types/enzyme": "^2.7.1",
+    "@types/jasmine": "^2.5.41",
+    "@types/node": "^7.0.0",
+    "@types/react": "^15.0.1",
+    "@types/react-dom": "^0.14.20",
+    "@types/react-router": "^2.0.45",
+    "@types/react-router-redux": "^4.0.38",
+    "@types/whatwg-fetch": "0.0.33",
     "autoprefixer": "^6.3.3",
     "awesome-typescript-loader": "^1.0.0",
     "babel-core": "^6.9.1",
@@ -113,7 +121,6 @@
     "tslint": "^3.7.4",
     "tslint-loader": "^2.1.0",
     "typescript": "2.0.10",
-    "typings": "^1.0.4",
     "url-loader": "^0.5.6",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
