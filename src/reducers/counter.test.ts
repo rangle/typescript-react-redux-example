@@ -1,3 +1,5 @@
+/// <reference path="../../node_modules/@types/jasmine/index.d.ts" />
+
 import { Map } from 'immutable';
 
 import fireAction from '../../test-utils/fire-action';

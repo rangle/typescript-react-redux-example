@@ -1,3 +1,5 @@
+declare var require: any;
+
 import { combineReducers } from 'redux';
 const { routerReducer } = require('react-router-redux');
 const formReducer = require('redux-form').reducer;

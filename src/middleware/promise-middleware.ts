@@ -1,3 +1,5 @@
+declare var require: any;
+
 import isPromise from '../utils/is-promise';
 const objectAssign = require('object-assign');
 

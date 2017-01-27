@@ -1,3 +1,5 @@
+declare var require: any;
+
 import * as React from 'react';
 const connect = require('react-redux').connect;
 
