@@ -1,19 +1,24 @@
 machine:
   python:
     version: 2.7.9
-
   node:
     version: 6
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
 dependencies:
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
   pre:
     - pip install robotframework==3.0
     - pip install robotframework-requests==0.4.4
     - pip install robotframework-selenium2library==1.7.4
-    # Clean out node-modules to prevent issues with circle-ci's caching.
-    - rm -rf node_modules
 
 test:
+  override:
+    - yarn test
   post:
     - cp -R coverage $CIRCLE_ARTIFACTS
     - npm run build
