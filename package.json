@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "express": "^4.13.4",
-    "helmet": "^2.0.0",
+    "helmet": "^2.2.0",
     "http-proxy": "^1.13.2",
     "winston": "^2.1.1"
   },
