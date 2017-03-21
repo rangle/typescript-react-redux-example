@@ -46,7 +46,7 @@
     "winston": "^2.1.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.3",
+    "autoprefixer": "^6.4.1",
     "awesome-typescript-loader": "^1.0.0",
     "babel-core": "^6.9.1",
     "babel-polyfill": "^6.9.1",
